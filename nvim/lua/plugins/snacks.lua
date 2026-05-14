@@ -6,7 +6,15 @@ return {
         files = {
           hidden = true, -- show dotfiles
           ignored = true, -- show .gitignored files
-          exclude = { ".git", ".venv", ".ruff_cache", ".pytest_cache", "__pycache__" },
+          exclude = {
+            ".git",
+            ".venv",
+            ".ruff_cache",
+            ".pytest_cache",
+            "__pycache__",
+            "node_modules",
+            "dist",
+          },
         },
         explorer = {
           hidden = true,
