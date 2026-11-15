@@ -1,0 +1,77 @@
+# Change windows focus
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+alt - left  : yabai -m window --focus west
+alt - down  : yabai -m window --focus south
+alt - up    : yabai -m window --focus north
+alt - right : yabai -m window --focus east
+
+# swap window position and size with window in direction of focused window
+alt + shift - h : yabai -m window --swap west
+alt + shift - j : yabai -m window --swap south
+alt + shift - k : yabai -m window --swap north
+alt + shift - l : yabai -m window --swap east
+alt + shift - left  : yabai -m window --swap west
+alt + shift - down  : yabai -m window --swap south
+alt + shift - up    : yabai -m window --swap north
+alt + shift - right : yabai -m window --swap east
+
+# move window and split (warp)
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - l : yabai -m window --warp east
+ctrl + alt - left  : yabai -m window --warp west
+ctrl + alt - down  : yabai -m window --warp south
+ctrl + alt - up    : yabai -m window --warp north
+ctrl + alt - right : yabai -m window --warp east
+
+# resize focused window
+alt + cmd - h : yabai -m window --resize left:-40:0  || yabai -m window --resize right:-40:0
+alt + cmd - j : yabai -m window --resize bottom:0:40 || yabai -m window --resize top:0:40
+alt + cmd - k : yabai -m window --resize top:0:-40   || yabai -m window --resize bottom:0:-40
+alt + cmd - l : yabai -m window --resize right:40:0  || yabai -m window --resize left:40:0
+alt + cmd - left  : yabai -m window --resize left:-40:0  || yabai -m window --resize right:-40:0
+alt + cmd - down  : yabai -m window --resize bottom:0:40 || yabai -m window --resize top:0:40
+alt + cmd - up    : yabai -m window --resize top:0:-40   || yabai -m window --resize bottom:0:-40
+alt + cmd - right : yabai -m window --resize right:40:0  || yabai -m window --resize left:40:0
+
+# balance window sizes / rotate / mirror the tree
+alt + shift - 0 : yabai -m space --balance
+alt - r : yabai -m space --rotate 270
+alt - y : yabai -m space --mirror y-axis
+alt - x : yabai -m space --mirror x-axis
+
+# toggle split direction, fullscreen (keeps gaps), float (centered)
+alt - e : yabai -m window --toggle split
+alt - f : yabai -m window --toggle zoom-fullscreen
+alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# Focus space
+alt - 1 : yabai -m display --focus 1
+alt - 2 : yabai -m display --focus 2
+alt - 3 : yabai -m display --focus 3
+alt - 4 : yabai -m display --focus 4
+alt - 5 : yabai -m display --focus 5
+
+# Close current window, then immediately focus recent or first window
+alt - w : yabai -m window --close && yabai -m window --focus recent
+
+# send window to space N (works without the scripting addition)
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+
+# send window to next/prev display and follow it
+alt + shift - n : yabai -m window --display next || yabai -m window --display first; yabai -m display --focus recent
+alt + shift - p : yabai -m window --display prev || yabai -m window --display last;  yabai -m display --focus recent
+
+# restart yabai
+ctrl + alt + cmd - r : yabai --restart-service
+
+# Open a new Ghostty window on the current space (-n = new instance; plain -a jumps to an existing window)
+alt - return : open -na Ghostty
