@@ -75,3 +75,6 @@ ctrl + alt + cmd - r : yabai --restart-service
 
 # Open a new Ghostty window on the current space (-n = new instance; plain -a jumps to an existing window)
 alt - return : open -na Ghostty
+
+# Open browser
+alt + shift - return : open -na "Google Chrome"
